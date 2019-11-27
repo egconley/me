@@ -4,7 +4,7 @@
 }
 
 /* burger menu - basic */
-#menuContainer {
+#burgerMenuContainer {
   display: inline-block;
 }
 
@@ -28,10 +28,16 @@
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
 }
+
+/* toggle menu */
+#menuContainer {
+  display: none;
+}
+
 /* burger menu - end */
 
 @media (min-width: 768px) {
-  #menuContainer {
+  #burgerMenuContainer {
     display: none;
   }
 }
