@@ -1,12 +1,26 @@
+/* nav - start */ 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  display: inline-block;
+  margin: 6px;
+}
+/* nav - end */ 
+
 /* burger menu - start */
 #burgerMenuContainer {
   display: inline-block;
+  margin: 6px;
 }
 
 #bar1, #bar2, #bar3 {
   width: 35px;
   height: 5px;
-  background-color: rgb(241, 249, 88);
+  background-color: red;
   margin: 6px 0;
   transition: 0.4s;
 }
