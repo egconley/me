@@ -1,4 +1,12 @@
 * {
   box-sizing: border-box;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+}
+
+nav {
+  background-color: rgb(241, 249, 88);
+}
+
+#menuContainer {
+  background-color: rgb(164, 208, 255);
 }
