@@ -1,4 +1,4 @@
-/* burger menu - basic */
+/* burger menu - start */
 #burgerMenuContainer {
   display: inline-block;
 }
@@ -28,6 +28,47 @@
 #menuContainer {
   display: none; /* starts with display: none;, toggle triggered in burgerToX function */
 }
+/* burger menu - end */
+
+
+/* mobile layout with grid - start */
+
+/* resource: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout */
+
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+body {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: 
+    "nav"
+    "main"
+    "footer";
+}
+
+nav {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+
+footer {
+  height: 100%;
+}
+
+/* mobile layout with grid - end */
 
 @media (min-width: 768px) {
   #burgerMenuContainer {
