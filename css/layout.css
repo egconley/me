@@ -97,5 +97,6 @@ footer {
   #menuContainer, #menuContainer li {
     display: inline-block;
     margin: 6px;
+    background-color: rgb(241, 249, 88);
   }
 }
