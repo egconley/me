@@ -11,8 +11,9 @@ nav span {
 
 h1 {
   display: inline-block;
-  margin: 6px;
+  padding: 6px;
 }
+
 /* nav - end */ 
 
 /* burger menu - start */
@@ -89,7 +90,7 @@ footer {
 /* mobile layout with grid - end */
 
 @media (min-width: 768px) {
-  #burgerMenuContainer {
+  #bar1, #bar2, #bar3 {
     display: none;
   }
 
