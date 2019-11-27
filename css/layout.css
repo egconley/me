@@ -5,6 +5,10 @@ nav {
   align-items: center;
 }
 
+nav span {
+  margin: 6px;
+}
+
 h1 {
   display: inline-block;
   margin: 6px;
@@ -91,5 +95,6 @@ footer {
 
   #menuContainer, #menuContainer li {
     display: inline-block;
+    margin: 6px;
   }
 }
