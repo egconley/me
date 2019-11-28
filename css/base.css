@@ -5,8 +5,17 @@
 
 nav {
   background-color: rgb(241, 249, 88);
+  font-family: 'Roboto Mono', monospace;
 }
 
 #menuContainer {
   background-color: rgb(164, 208, 255);
+}
+
+main {
+  font-family: 'Baskervville', serif;
+}
+
+footer {
+  font-family: 'Roboto Mono', monospace;
 }
