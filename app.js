@@ -15,6 +15,7 @@ function burgerToX(x) {
   x.classList.toggle('changeMenu');
   $('#appendMenu').append($('#menuContainer'));
   $('#menuContainer').slideToggle(200);
+  $('#menuContainer li').css('padding', '3px');
 }
 
 
