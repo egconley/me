@@ -14,7 +14,7 @@ $(document).ready(function () {
 function burgerToX(x) {
   x.classList.toggle('changeMenu');
   $('#appendMenu').append($('#menuContainer'));
-  $('#menuContainer').toggle();
+  $('#menuContainer').slideToggle(200);
 }
 
 
