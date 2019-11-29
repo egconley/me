@@ -56,7 +56,7 @@ h1 {
 
 /* resource: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout */
 
-nav {
+/* nav {
   grid-area: nav;
 }
 
@@ -87,7 +87,7 @@ main {
 
 footer {
   height: 100%;
-}
+} */
 
 /* mobile layout with grid - end */
 

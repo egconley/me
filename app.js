@@ -13,6 +13,7 @@ $(document).ready(function () {
 // burger menu to X on click
 function burgerToX(x) {
   x.classList.toggle('changeMenu');
+  $('#appendMenu').append($('#menuContainer'));
   $('#menuContainer').toggle();
 }
 
