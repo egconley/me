@@ -18,6 +18,18 @@ h1 {
 
 /* nav - end */ 
 
+/* footer - start */ 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer i {
+  margin: 6px;
+}
+/* footer - end */ 
+
 /* burger menu - start */
 #burgerMenuContainer {
   display: inline-block;
