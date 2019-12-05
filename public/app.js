@@ -18,4 +18,16 @@ function burgerToX(x) {
   $('#menuContainer li').css('padding', '3px');
 }
 
+// append advice string into p tag
+// $('#appendAdvice').append('does it work?');
+// $('#appendAdvice').append(adviceString);
+
+// an idea from https://www.freecodecamp.org/forum/t/translating-a-json-data-to-html-element/137934/7
+// fetch('http://localhost:3000/advice')
+//     .then((res) => res.json())
+//     .then((data) => {
+//     loginBarner.innerHTML = `${JSON.stringify(data)}`;
+//     console.log(data);
+//     })
+
 
