@@ -10,9 +10,38 @@ require('dotenv').config();
 
 // application setup
 const app = express();
-app.listen(PORT, () => {
-  console.log(`listening on ${PORT}`);
-})
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./public'));
+
+// routes
+app.get('/advice', adviceHandler);
+
+// advice api
+function adviceHandler(req, res) {
+  let url = 'https://api.adviceslip.com/advice';
+
+  superagent.get(url)
+    .then(data => {
+      // console.log('the data: ', JSON.parse(data.text));
+      let pieceOfAdvice = new AdviceSlip(JSON.parse(data.text));
+      // console.log(pieceOfAdvice);
+      res.status(200).json(pieceOfAdvice.slip.advice);
+    })
+    .catch(() => {
+      errorHandler(`So sorry, something went wrong.`, req, res);
+    });
+}
+
+function AdviceSlip(advice) {
+  this.slip = advice.slip;
+  console.log(this);
+}
+
+function errorHandler(error, req, res) {
+  res.status(500).send(error);
+}
+
+app.listen(PORT, () => {
+  console.log(`listening on ${PORT}`);
+})
