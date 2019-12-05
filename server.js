@@ -1,5 +1,7 @@
 'use strict';
 
+// let adviceString;
+
 // application dependencies
 const express = require('express');
 const superagent = require('superagent');
@@ -25,7 +27,8 @@ function adviceHandler(req, res) {
     .then(data => {
       // console.log('the data: ', JSON.parse(data.text));
       let pieceOfAdvice = new AdviceSlip(JSON.parse(data.text));
-      // console.log(pieceOfAdvice);
+      // adviceString = pieceOfAdvice.slip.advice;
+      // $('#appendAdvice').append(pieceOfAdvice.slip.advice);
       res.status(200).json(pieceOfAdvice.slip.advice);
     })
     .catch(() => {
@@ -33,9 +36,11 @@ function adviceHandler(req, res) {
     });
 }
 
+// $('#appendAdvice').append(adviceString);
+
 function AdviceSlip(advice) {
   this.slip = advice.slip;
-  console.log(this);
+  // console.log(this);
 }
 
 function errorHandler(error, req, res) {
