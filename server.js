@@ -4,7 +4,9 @@
 
 // application dependencies
 const express = require('express');
+const cors = require('cors');
 const superagent = require('superagent');
+require('ejs');
 const PORT = process.env.PORT || 3000;
 
 // load environment variables from .env
@@ -14,10 +16,18 @@ require('dotenv').config();
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
+app.set('view engine', 'ejs');
 app.use(express.static('./public'));
+app.set('views', __dirname + '/public/views');
 
 // routes
+app.get('/', homePage);
 app.get('/advice', adviceHandler);
+
+// render home page
+function homePage(req, res) {
+  res.render('index');
+}
 
 // advice api
 function adviceHandler(req, res) {
