@@ -21,12 +21,13 @@ app.use(express.static('./public'));
 app.set('views', __dirname + '/public/views');
 
 // routes
-app.get('/', homePage);
+app.get('/', adviceHandler);
 app.get('/advice', adviceHandler);
 
 // render home page
 function homePage(req, res) {
-  res.render('index');
+  adviceHandler();
+  // res.render('pages/index');
 }
 
 // advice api
@@ -35,16 +36,27 @@ function adviceHandler(req, res) {
 
   superagent.get(url)
     .then(data => {
-      // console.log('the data: ', JSON.parse(data.text));
+      console.log('the data: ', JSON.parse(data.text));
       let pieceOfAdvice = new AdviceSlip(JSON.parse(data.text));
-      // adviceString = pieceOfAdvice.slip.advice;
-      // $('#appendAdvice').append(pieceOfAdvice.slip.advice);
-      res.status(200).json(pieceOfAdvice.slip.advice);
+      // new AdviceSlip(JSON.parse(data.text));
+      res.render('pages/index', { adviceKey: pieceOfAdvice.slip.advice })
+      // res.status(200).json(pieceOfAdvice.slip.advice);
     })
-    .catch(() => {
-      errorHandler(`So sorry, something went wrong.`, req, res);
-    });
+    // .then(pieceOfAdvice => {
+    //   res.render('pages/index', { adviceKey: pieceOfAdvice })
+    // })
+  // .catch(() => {
+  //   errorHandler(`So sorry, something went wrong.`, req, res);
+  // });
 }
+
+// render api data with ejs
+// superagent.get(url)
+//   .then(data => data.body._embedded.events.map(events => new TicketMaster(events)))
+//   .then(eventsArr => res.render('pages/searches/events', { eventsArrKey: eventsArr, }))
+//   .catch(() => {
+//     res.render('pages/error');
+//   });
 
 function AdviceSlip(advice) {
   this.slip = advice.slip;
@@ -58,11 +70,3 @@ function errorHandler(error, req, res) {
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 })
-
-// render api data with ejs
-// superagent.get(url)
-//   .then(data => data.body._embedded.events.map(events => new TicketMaster(events)))
-//   .then(eventsArr => res.render('pages/searches/events', { eventsArrKey: eventsArr, }))
-//   .catch(() => {
-//     res.render('pages/error');
-//   });
