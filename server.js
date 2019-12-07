@@ -36,8 +36,6 @@ function adviceHandler(req, res) {
     });
 }
 
-// $('#appendAdvice').append(adviceString);
-
 function AdviceSlip(advice) {
   this.slip = advice.slip;
   // console.log(this);
@@ -50,3 +48,11 @@ function errorHandler(error, req, res) {
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 })
+
+// render api data with ejs
+// superagent.get(url)
+//   .then(data => data.body._embedded.events.map(events => new TicketMaster(events)))
+//   .then(eventsArr => res.render('pages/searches/events', { eventsArrKey: eventsArr, }))
+//   .catch(() => {
+//     res.render('pages/error');
+//   });
